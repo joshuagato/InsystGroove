@@ -47,7 +47,7 @@ class Login extends Component {
                     
                     <Input change={this.usernameInput} type="text" placeholder="Username" />
                     <Input change={this.passwordInput} type="password" placeholder="Password" />
-                    <Input click="" type="button" value="Signup" />
+                    <Input type="button" value="Signup" />
 
                     <span onClick={this.showHideForms}>Not Registered? Signup here</span>
                 </div>
