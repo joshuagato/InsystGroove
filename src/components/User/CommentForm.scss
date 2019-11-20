@@ -1,0 +1,48 @@
+.comment_form {
+    width: 60%;
+
+    textarea {
+        width: 75%;
+        height: 60px;
+        border-radius: 3px;
+        margin-right: 5px;
+        border: 1px solid #d3d3d3;
+        font-size: 12px;
+        padding: 5px;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    input[type="submit"] {
+        width: 6rem;
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        background-color: rgba(213, 126, 26, 0.8);
+        font-family: 'Bellota-BoldItalic', sans-serif;
+        color: #000;
+        text-shadow: #73b6e2 0.5px 0.5px 0px;
+        font-size: 90%;
+        position: absolute;
+        outline: 0;
+        margin: 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(213, 126, 26);
+        }
+
+        &:active {
+            padding: 5px 4px 4px 5px;
+            color: #fff;
+        }
+    }
+}
+
+.comment_form_div {
+    span {
+        cursor: pointer;
+    }
+}
