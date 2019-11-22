@@ -49,7 +49,7 @@ class Login extends Component {
                     <Input change={this.passwordInput} type="password" placeholder="Password" value={this.state.password} />
                     <Input type="button" value="Signup" />
 
-                    <span onClick={this.showHideForms}>Not Registered? Signup here</span>
+                    <span onClick={this.showHideForms}>Already Registered? Login here!!</span>
                 </div>
             );
         }
@@ -63,7 +63,7 @@ class Login extends Component {
                     <Input change={this.passwordInput} type="password" placeholder="Password" />
                     <Input click={this.loginHandler} type="button" value="Login" />
 
-                    <span onClick={this.showHideForms}>Already Registered? Login here</span>
+                    <span onClick={this.showHideForms}>Not Registered? Signup here!!</span>
                 </div>
             );
         }
