@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ViewUser = (props) => {
     return (
@@ -9,7 +9,7 @@ const ViewUser = (props) => {
                 <p>Name: {props.name}</p>
             </div>
         </div>
-    )
+    );
 }
 
-export default ViewUser
+export default ViewUser;

@@ -48,7 +48,7 @@ class Posts extends Component {
                         <span onClick={this.formToggle} >Comment</span>
 
                         <CommentForm show={this.state.showForm} change={this.props.change} 
-                            submit={this.props.submit} pid={this.props.pid} />
+                            submit={this.props.submit} pid={this.props.pid} value={this.props.value} />
                     </div>
 
                 </div>

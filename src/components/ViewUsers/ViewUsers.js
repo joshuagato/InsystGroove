@@ -14,8 +14,6 @@ export class ViewUsers extends Component {
         axios.get('http://jsonplaceholder.typicode.com/photos?_limit=20').then(response => {
             const persons = response.data;
             this.setState({ users: persons });
-
-            console.log(this.state.users);
         });
     }
 

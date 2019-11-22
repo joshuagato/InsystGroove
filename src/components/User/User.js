@@ -32,9 +32,7 @@ class User extends Component {
                 id: 2,
                 user: 'Joshua Gato',
                 post: 'This is Post Two',
-                comments: [
-                    
-                ]
+                comments: []
             }
         ],
         newpostbody: '',
@@ -48,9 +46,7 @@ class User extends Component {
             id: uuid.v4(),
             user: 'Joshua Gato',
             post: this.state.newpostbody,
-            comments: [
-                
-            ]
+            comments: []
         }
 
         this.setState({ posts: [...this.state.posts, newpost], newpostbody: '' });
@@ -74,7 +70,7 @@ class User extends Component {
             return post;
         });
         
-        this.setState({ posts: clonedPosts });
+        this.setState({ posts: clonedPosts, newComment: '' });
     }
 
     changeHandler = (event) => {
@@ -90,14 +86,14 @@ class User extends Component {
     }
 
     logout = () => {
-        this.props.history.push('/');
+        this.props.history.replace('/');
     }
 
     render() {
 
         let posts = this.state.posts.map(post => (
-            <Posts key={post.id} pid={post.id} profile={profile} name={post.user} post={post.post} 
-            comments={post.comments} change={this.commentChangeHandler} submit={this.commentSubmit} />
+            <Posts key={post.id} pid={post.id} profile={profile} name={post.user} post={post.post} comments={post.comments} 
+            change={this.commentChangeHandler} submit={this.commentSubmit} value={this.state.newComment} />
         ));
 
         return (
@@ -117,7 +113,7 @@ class User extends Component {
 
                 <div className="main_column column">
 
-                    <PostForm submit={this.onSubmit} change={this.changeHandler} />
+                    <PostForm submit={this.onSubmit} change={this.changeHandler} value={this.state.newpostbody} />
 
                     {posts}
 

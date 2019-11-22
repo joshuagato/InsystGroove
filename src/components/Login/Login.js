@@ -23,7 +23,7 @@ class Login extends Component {
 
     loginHandler = () => {        
 
-        if(this.state.username === 'esoko' && this.state.password ==='insyst') {
+        if(this.state.username === 'esoko' && this.state.password === 'insyst') {
             this.props.history.push('/user');
         }
 
@@ -45,8 +45,8 @@ class Login extends Component {
                 <div id="login" className="login">
                     <h2>Insyst Groove</h2>
                     
-                    <Input change={this.usernameInput} type="text" placeholder="Username" />
-                    <Input change={this.passwordInput} type="password" placeholder="Password" />
+                    <Input change={this.usernameInput} type="text" placeholder="Username" value={this.state.username} />
+                    <Input change={this.passwordInput} type="password" placeholder="Password" value={this.state.password} />
                     <Input type="button" value="Signup" />
 
                     <span onClick={this.showHideForms}>Not Registered? Signup here</span>
