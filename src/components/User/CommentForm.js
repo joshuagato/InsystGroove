@@ -9,10 +9,10 @@ const CommentForm = (props) => {
         commentForm = (
             <div>
                 <form onSubmit={props.submit.bind(this, props.pid)} className="comment_form">
-                    <textarea onChange={props.change} name="post_text" id="comment_text" 
+                    <textarea onChange={props.change} name="comment" id="comment_text" 
                         placeholder="Type your Comment..." value={props.value} required>
                     </textarea>
-                    <input type="submit" name="post" id="post_button" value="Submit" />
+                    <input type="submit" value="Submit" />
                 </form>
                 <hr />
             </div>

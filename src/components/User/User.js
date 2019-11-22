@@ -74,13 +74,15 @@ class User extends Component {
     }
 
     changeHandler = (event) => {
-        this.setState({ newpostbody: event.target.value });
+        if(event.target.name === 'post') {
+            this.setState({ newpostbody: event.target.value });
+        }
+
+        else if(event.target.name === 'comment') {
+            this.setState({ newComment: event.target.value });
+        }
     }
     
-    commentChangeHandler = (event) => {
-        this.setState({ newComment: event.target.value });
-    }
-
     viewUsers = () => {
         this.props.history.push('/view-users');
     }
@@ -93,7 +95,7 @@ class User extends Component {
 
         let posts = this.state.posts.map(post => (
             <Posts key={post.id} pid={post.id} profile={profile} name={post.user} post={post.post} comments={post.comments} 
-            change={this.commentChangeHandler} submit={this.commentSubmit} value={this.state.newComment} />
+            change={this.changeHandler} submit={this.commentSubmit} value={this.state.newComment} />
         ));
 
         return (
