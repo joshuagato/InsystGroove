@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import  { withRouter } from 'react-router-dom';
 import './User.scss';
 
 import uuid from 'uuid';
@@ -88,6 +89,7 @@ class User extends Component {
     }
 
     logout = () => {
+        this.props.auth(false);
         this.props.history.replace('/');
     }
 
@@ -128,4 +130,5 @@ class User extends Component {
     }
 }
 
+// export default withRouter(User);
 export default User;

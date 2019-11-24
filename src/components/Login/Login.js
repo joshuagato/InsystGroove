@@ -8,7 +8,7 @@ class Login extends Component {
     state = {
         username: '',
         password: '',
-        registered: false
+        registered: true
     }
 
     usernameInput = (event) => {
@@ -21,12 +21,13 @@ class Login extends Component {
         this.setState({ password: password });
     }
 
-    loginHandler = () => {        
+    loginHandler = () => {
 
         if(this.state.username === 'esoko' && this.state.password === 'insyst') {
+            this.props.auth(true);
             this.props.history.push('/user');
         }
-
+        
         else {
             alert('Please check your username or password');
         }
@@ -38,11 +39,12 @@ class Login extends Component {
     
 
     render() {
+
         let display = '';
 
-        if(this.state.registered === true) {
+        if(this.state.registered !== true) {
             display = (
-                <div id="login" className="login">
+                <div id="signup" className="signup">
                     <h2>Insyst Groove</h2>
                     
                     <Input change={this.usernameInput} type="text" placeholder="Username" value={this.state.username} />
@@ -56,11 +58,11 @@ class Login extends Component {
 
         else {
             display = (
-                <div id="signup" className="signup">
+                <div id="login" className="login">
                     <h2>Insyst Groove</h2>
 
-                    <Input change={this.usernameInput} type="text" placeholder="Username" />
-                    <Input change={this.passwordInput} type="password" placeholder="Password" />
+                    <Input change={this.usernameInput} type="text" placeholder="Username"  value={this.state.username} />
+                    <Input change={this.passwordInput} type="password" placeholder="Password" value={this.state.password} />
                     <Input click={this.loginHandler} type="button" value="Login" />
 
                     <span onClick={this.showHideForms}>Not Registered? Signup here!!</span>
