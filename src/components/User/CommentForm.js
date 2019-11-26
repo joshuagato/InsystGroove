@@ -14,9 +14,8 @@ const CommentForm = (props) => {
                     </textarea>
                     <input type="submit" value="Submit" />
                 </form>
-                <hr />
             </div>
-        )
+        );
     }
     else {
         commentForm = '';
